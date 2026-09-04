@@ -1,25 +1,25 @@
-# 마오마오 Codex Pet
+# Maomao Codex Pet
 
-《약사의 혼잣말》의 마오마오를 모티프로 만든 Codex Desktop용 커스텀 펫입니다.
+An unofficial animated custom pet inspired by Maomao from *The Apothecary Diaries*, created for Codex on Windows and macOS.
 
-> A cute animated Maomao custom pet for Codex Desktop on Windows and macOS.
+> A clever chibi apothecary pet with dark teal hair, green hanfu robes, and a curious love of herbs and poisons.
 
-## 특징
+## Features
 
-- Codex Pets v2 형식 (`spriteVersionNumber: 2`)
-- `1536 × 2288` RGBA WebP 스프라이트 시트
-- `192 × 208` 셀, `8 × 11` 배열
-- 9가지 기본 애니메이션 상태
-- 마우스 방향을 따르는 16가지 시선 방향
-- Windows에서는 디스플레이 배율 200% 환경에서 테스트
+- Codex Pets v2 format (`spriteVersionNumber: 2`)
+- `1536 × 2288` RGBA WebP spritesheet
+- `192 × 208` cells arranged in an `8 × 11` grid
+- Nine standard animation states
+- Sixteen pointer-following look directions
+- Tested on Windows with 200% display scaling
 
-## 설치
+## Installation
 
-> 이 저장소의 `1536 × 2288` v2 스프라이트 시트는 데스크톱 앱의 로컬 커스텀 펫용입니다. ChatGPT 웹의 **Upload pet** 규격과는 다릅니다.
+> The `1536 × 2288` v2 spritesheet in this repository is intended for local custom pets in the Codex desktop app. It is not the same format as the **Upload pet** feature on ChatGPT web.
 
 ### Windows
 
-#### PowerShell로 빠르게 설치
+#### Quick install with PowerShell
 
 ```powershell
 git clone https://github.com/h4vrut4/Maomao-Codex-Pet.git
@@ -27,10 +27,10 @@ cd Maomao-Codex-Pet
 powershell -ExecutionPolicy Bypass -File .\install.ps1
 ```
 
-#### ZIP으로 수동 설치
+#### Manual installation from ZIP
 
-1. GitHub의 **Code → Download ZIP**으로 저장소를 내려받아 압축을 풉니다.
-2. `pet.json`과 `spritesheet.webp`를 아래 폴더에 함께 복사합니다.
+1. On GitHub, select **Code → Download ZIP**, then extract the archive.
+2. Copy `pet.json` and `spritesheet.webp` into the following folder:
 
 ```text
 %USERPROFILE%\.codex\pets\maomao-kusuriya\
@@ -40,9 +40,9 @@ powershell -ExecutionPolicy Bypass -File .\install.ps1
 
 ### macOS
 
-> 아래 설치 절차는 Codex Pets 로컬 패키지 규격을 기준으로 작성했으며 macOS 실기기에서는 아직 테스트하지 않았습니다.
+> These instructions follow the local Codex Pets package format, but they have not yet been tested on a Mac.
 
-#### Terminal로 빠르게 설치
+#### Quick install in Terminal
 
 ```sh
 git clone https://github.com/h4vrut4/Maomao-Codex-Pet.git
@@ -53,13 +53,13 @@ mkdir -p "$pet_dir"
 cp -f ./pet.json ./spritesheet.webp "$pet_dir/"
 ```
 
-`sudo`는 필요하지 않습니다. `CODEX_HOME`을 따로 설정하지 않았다면 기본 설치 위치는 `~/.codex/pets/maomao-kusuriya`입니다.
+You do not need `sudo`. Unless you have set a custom `CODEX_HOME`, the default installation path is `~/.codex/pets/maomao-kusuriya`.
 
-#### Finder로 수동 설치
+#### Manual installation with Finder
 
-1. GitHub의 **Code → Download ZIP**으로 저장소를 내려받아 압축을 풉니다.
-2. Finder에서 `Shift+Command+G`를 누르고 `~/.codex/pets`를 입력합니다.
-3. `maomao-kusuriya` 폴더를 만든 뒤 `pet.json`과 `spritesheet.webp`를 함께 복사합니다.
+1. On GitHub, select **Code → Download ZIP**, then extract the archive.
+2. In Finder, press `Shift-Command-G` and enter `~/.codex/pets`.
+3. Create a folder named `maomao-kusuriya`, then copy `pet.json` and `spritesheet.webp` into it.
 
 ```text
 ~/.codex/pets/maomao-kusuriya/
@@ -67,22 +67,22 @@ cp -f ./pet.json ./spritesheet.webp "$pet_dir/"
 └── spritesheet.webp
 ```
 
-`CODEX_HOME`을 별도로 설정했다면 `~/.codex` 대신 해당 경로를 사용해야 합니다. Finder의 경로 입력창에서는 `$CODEX_HOME` 문자열이 자동으로 변환되지 않습니다.
+If you use a custom `CODEX_HOME`, replace `~/.codex` with that path. Finder does not automatically expand the literal `$CODEX_HOME` variable in its path field.
 
-### Codex에서 불러오기
+### Enable Maomao in Codex
 
-1. **Settings → Pets**로 이동합니다.
-2. **Refresh custom pets** 또는 **Refresh**를 누릅니다.
-3. 목록에서 **마오마오 (Maomao)** 항목을 선택합니다.
-4. 채팅 입력창에서 `/pet`을 실행해 펫을 깨웁니다.
+1. Open **Settings → Pets**.
+2. Select **Refresh custom pets** or **Refresh**.
+3. Choose **Maomao** from the list.
+4. Enter `/pet` in the chat box to wake the pet.
 
-맞춤형 펫은 각 컴퓨터에 로컬로 저장되며 ChatGPT 웹이나 다른 컴퓨터로 자동 동기화되지 않습니다.
+Custom pets are stored locally on each computer. They do not automatically sync through ChatGPT web or between devices.
 
-## 업데이트
+## Updating
 
 ### Windows
 
-저장소 폴더에서 아래 명령을 다시 실행하면 설치된 파일을 최신 버전으로 덮어씁니다.
+From the cloned repository folder, run:
 
 ```powershell
 git pull
@@ -91,7 +91,7 @@ powershell -ExecutionPolicy Bypass -File .\install.ps1
 
 ### macOS
 
-저장소 폴더에서 아래 명령을 실행합니다.
+From the cloned repository folder, run:
 
 ```sh
 git pull --ff-only
@@ -101,43 +101,47 @@ mkdir -p "$pet_dir"
 cp -f ./pet.json ./spritesheet.webp "$pet_dir/"
 ```
 
-## 문제 해결
+## Troubleshooting
 
-### Windows: 배율 때문에 클릭·드래그가 안 될 때
+### Windows: The pet cannot be clicked or dragged
 
-마오마오는 Windows 디스플레이 배율 200%에서 테스트했습니다. 다른 배율이나 서로 다른 배율을 사용하는 다중 모니터 환경에서는 펫이 보이는 위치와 실제 클릭 영역이 어긋날 수 있습니다. 특히 150% 배율에서 펫은 보이지만 클릭과 드래그가 아래 창으로 통과하는 [Codex Desktop 알려진 문제](https://github.com/openai/codex/issues/42289)가 보고되어 있습니다.
+Maomao was tested on Windows with 200% display scaling. At other scale factors—or when using multiple monitors with different scale settings—the visible pet and its clickable area may become misaligned.
 
-이 저장소는 펫 자산만 제공하며, `pet.json`에는 화면 배율이나 클릭 영역을 보정하는 옵션이 없습니다. 따라서 아래는 앱이나 레지스트리를 수정하지 않는 임시 확인 방법입니다. 배율을 바꾸기 전에는 진행 중인 작업을 마치세요.
+A [known Codex Desktop issue](https://github.com/openai/codex/issues/42289) describes pets appearing normally while clicks and drag gestures pass through to the window underneath, particularly at 150% scaling.
 
-1. Codex Desktop이 최신 버전인지 확인합니다.
-2. Codex 메인 창을 클릭한 뒤 `Ctrl+0`을 눌러 앱 내부 확대/축소를 기본값으로 되돌립니다. 이 조작은 Windows 배율 자체를 바꾸지는 않습니다.
-3. **Settings → Pets → Tuck Away Pet**으로 펫을 숨긴 뒤 **Refresh custom pets**를 누르고 마오마오를 다시 선택합니다. `/pet`으로 다시 깨웁니다.
-4. 트레이 아이콘과 작업 관리자에 남은 프로세스까지 포함해 Codex를 완전히 종료한 뒤, 펫을 사용할 주 모니터에서 다시 실행합니다.
-5. 모니터가 여러 대라면 잠시 한 대만 사용하거나 **Windows 설정 → 시스템 → 디스플레이**에서 모든 모니터의 배율을 같은 값으로 맞춘 뒤 Codex를 재실행합니다.
-6. 계속 어긋나거나 현재 배율이 150%라면, 진단용으로 펫을 사용할 모니터의 배율을 이 펫에서 확인한 **200%** 배율로 바꾸고 Codex를 완전히 재실행합니다. 200%에서 클릭된다면 마오마오 파일보다 Windows 배율과 Codex 오버레이 입력 영역 문제일 가능성이 큽니다.
-7. 기본 제공 펫도 같은 증상인지 확인합니다.
-   - 기본 펫도 클릭되지 않음: Codex Desktop 또는 Windows 배율 문제일 가능성이 큽니다.
-   - 마오마오만 클릭되지 않음: `install.ps1`을 다시 실행하고 **Refresh custom pets**를 누릅니다.
+This repository contains only the pet assets. The `pet.json` format does not provide an option for correcting display scaling or hit-box coordinates. Try the following checks before changing compatibility settings or modifying the registry:
 
-계속 원래 배율을 사용해야 한다면 위 이슈의 수정 상태를 확인해 주세요. 그래도 해결되지 않으면 앱 버전, Windows 배율, 모니터별 배율·배치, 기본 펫 재현 여부를 함께 적어 [OpenAI Codex 도움말](https://help.openai.com/en/articles/11369540)을 통해 지원을 요청할 수 있습니다.
+1. Make sure Codex Desktop is up to date.
+2. Focus the main Codex window and press `Ctrl+0` to reset the app's internal zoom. This does not change Windows display scaling.
+3. Open **Settings → Pets → Tuck Away Pet**, select **Refresh custom pets**, choose Maomao again, and enter `/pet`.
+4. Fully quit Codex, including any remaining tray or Task Manager process, then reopen it on the monitor where you plan to use the pet.
+5. If you use multiple monitors, temporarily use one monitor or set every monitor to the same scale under **Windows Settings → System → Display**, then restart Codex.
+6. As a diagnostic test, set the target monitor to **200%**, the scale at which this pet was tested, and restart Codex completely. If clicking works at 200%, the likely cause is the interaction between Windows scaling and the Codex pet overlay rather than the Maomao assets.
+7. Test one of the built-in pets:
+   - If built-in pets also cannot be clicked, the problem is likely related to Codex Desktop or Windows display scaling.
+   - If only Maomao is affected, run `install.ps1` again and select **Refresh custom pets**.
 
-Windows의 **높은 DPI 조정 동작 재정의**, 레지스트리 수정, 앱 파일 패치는 공식 해결책이 아니며 이 저장소에서는 권장하지 않습니다. 이전에 사용한 대각선 드래그 테스트 패치도 클릭 영역을 수정하는 패치가 아니므로 다른 PC의 배율 문제에는 적용할 수 없습니다.
+If you need to keep your original display scale, check the linked issue for updates. You can also contact [OpenAI Codex support](https://help.openai.com/en/articles/11369540) and include your Codex version, Windows scale, monitor layout, scale setting for each monitor, and whether the issue also affects built-in pets.
 
-### macOS: 목록에 없거나 움직이지 않을 때
+Overriding Windows high-DPI behavior, editing the registry, or patching application files are not official fixes and are not recommended by this repository.
 
-1. `pet.json`과 `spritesheet.webp`가 중첩된 폴더 없이 `maomao-kusuriya` 바로 아래에 있는지 확인합니다.
-2. **Settings → Pets → Refresh custom pets**를 누르고 마오마오를 다시 선택합니다.
-3. 계속 나타나지 않으면 진행 중인 작업을 마친 뒤 `Command+Q`로 앱을 완전히 종료하고 다시 실행합니다.
-4. 펫이 정지 화면으로만 보이면 **시스템 설정 → 손쉬운 사용 → 디스플레이 → 동작 줄이기**를 확인합니다. 이 옵션이 켜져 있으면 펫은 스프라이트 애니메이션 대신 정지 프레임을 사용합니다.
+### macOS: The pet does not appear or animate
 
-펫 선택·숨기기·깨우기 방법은 [OpenAI Pets 문서](https://learn.chatgpt.com/ko-KR/docs/pets)를 참고하세요.
+1. Make sure `pet.json` and `spritesheet.webp` are directly inside `maomao-kusuriya`, without an extra nested folder.
+2. Open **Settings → Pets → Refresh custom pets**, then select Maomao again.
+3. If it still does not appear, finish any active work, quit the app completely with `Command-Q`, and reopen it.
+4. If the pet appears as a static image, check **System Settings → Accessibility → Display → Reduce Motion**. When Reduce Motion is enabled, pets may use a static frame instead of sprite animation.
 
-## 제작
+See the [OpenAI Pets documentation](https://learn.chatgpt.com/docs/pets) for instructions on selecting, hiding, and waking pets.
 
-Built with OpenAI Codex and image generation. 캐릭터 스프라이트 제작부터 애니메이션 조립, 반복 개선, Codex Pets v2 검증까지 Codex를 활용했습니다.
+## Built With
 
-이 저장소에는 커스텀 펫 자산과 설치 도우미만 포함되어 있으며, Codex Desktop 실행 파일이나 수정본은 포함하지 않습니다.
+Created with OpenAI Codex and image generation, including character sprite creation, animation assembly, iterative motion refinement, and Codex Pets v2 validation.
 
-## 권리 안내
+This repository contains only the custom pet assets and an installation helper. It does not include or modify the Codex Desktop application.
 
-이 저장소는 비공식·비상업적 팬 프로젝트이며 원작자, 출판사, 애니메이션 제작위원회 또는 OpenAI와 제휴하거나 승인을 받은 프로젝트가 아닙니다. 마오마오와 《약사의 혼잣말》에 관한 권리는 각 권리자에게 있습니다. 개인적인 용도로만 사용해 주세요.
+## Disclaimer
+
+This is an unofficial, non-commercial fan project. It is not affiliated with or endorsed by the original creators, publishers, animation production committee, or OpenAI.
+
+Maomao and *The Apothecary Diaries* belong to their respective rights holders. This pet is intended for personal use only.

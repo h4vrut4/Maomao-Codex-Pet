@@ -1,7 +1,7 @@
 {
   "id": "maomao-kusuriya",
-  "displayName": "마오마오 (Maomao)",
-  "description": "약초와 독을 탐구하는 영리한 약사 마오마오를 담은 귀여운 SD풍 Codex 펫.",
+  "displayName": "Maomao",
+  "description": "A clever chibi apothecary pet with dark teal hair, green hanfu robes, and a curious love of herbs and poisons.",
   "spriteVersionNumber": 2,
   "spritesheetPath": "spritesheet.webp"
 }
