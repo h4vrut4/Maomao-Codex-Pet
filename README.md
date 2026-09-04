@@ -27,7 +27,7 @@ powershell -ExecutionPolicy Bypass -File .\install.ps1
 
 1. **Settings → Pets**로 이동합니다.
 2. **Refresh custom pets**를 누릅니다.
-3. **마오마오 (Maomao)**를 선택합니다.
+3. 목록에서 **마오마오 (Maomao)** 항목을 선택합니다.
 4. 펫이 보이지 않으면 채팅 입력창에서 `/pet`을 실행합니다.
 
 ### ZIP으로 수동 설치
@@ -73,7 +73,7 @@ Built with OpenAI Codex and image generation. 캐릭터 스프라이트 제작�
 3. **Settings → Pets → Tuck Away Pet**으로 펫을 숨긴 뒤 **Refresh custom pets**를 누르고 마오마오를 다시 선택합니다. `/pet`으로 다시 깨웁니다.
 4. 트레이 아이콘과 작업 관리자에 남은 프로세스까지 포함해 Codex를 완전히 종료한 뒤, 펫을 사용할 주 모니터에서 다시 실행합니다.
 5. 모니터가 여러 대라면 잠시 한 대만 사용하거나 **Windows 설정 → 시스템 → 디스플레이**에서 모든 모니터의 배율을 같은 값으로 맞춘 뒤 Codex를 재실행합니다.
-6. 계속 어긋나거나 현재 배율이 150%라면, 진단용으로 펫을 사용할 모니터의 배율을 이 펫에서 확인한 **200%**로 바꾸고 Codex를 완전히 재실행합니다. 200%에서 클릭된다면 마오마오 파일보다 Windows 배율과 Codex 오버레이 입력 영역 문제일 가능성이 큽니다.
+6. 계속 어긋나거나 현재 배율이 150%라면, 진단용으로 펫을 사용할 모니터의 배율을 이 펫에서 확인한 **200%** 배율로 바꾸고 Codex를 완전히 재실행합니다. 200%에서 클릭된다면 마오마오 파일보다 Windows 배율과 Codex 오버레이 입력 영역 문제일 가능성이 큽니다.
 7. 기본 제공 펫도 같은 증상인지 확인합니다.
    - 기본 펫도 클릭되지 않음: Codex Desktop 또는 Windows 배율 문제일 가능성이 큽니다.
    - 마오마오만 클릭되지 않음: `install.ps1`을 다시 실행하고 **Refresh custom pets**를 누릅니다.
