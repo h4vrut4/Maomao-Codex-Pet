@@ -2,7 +2,7 @@
 
 《약사의 혼잣말》의 마오마오를 모티프로 만든 Codex Desktop용 커스텀 펫입니다.
 
-> A cute animated Maomao custom pet for Codex Desktop on Windows.
+> A cute animated Maomao custom pet for Codex Desktop on Windows and macOS.
 
 ## 특징
 
@@ -11,11 +11,15 @@
 - `192 × 208` 셀, `8 × 11` 배열
 - 9가지 기본 애니메이션 상태
 - 마우스 방향을 따르는 16가지 시선 방향
-- Windows 디스플레이 배율 200% 환경에서 테스트
+- Windows에서는 디스플레이 배율 200% 환경에서 테스트
 
 ## 설치
 
-### PowerShell로 빠르게 설치
+> 이 저장소의 `1536 × 2288` v2 스프라이트 시트는 데스크톱 앱의 로컬 커스텀 펫용입니다. ChatGPT 웹의 **Upload pet** 규격과는 다릅니다.
+
+### Windows
+
+#### PowerShell로 빠르게 설치
 
 ```powershell
 git clone https://github.com/h4vrut4/Maomao-Codex-Pet.git
@@ -23,14 +27,7 @@ cd Maomao-Codex-Pet
 powershell -ExecutionPolicy Bypass -File .\install.ps1
 ```
 
-설치 후 Codex에서 다음 순서로 불러옵니다.
-
-1. **Settings → Pets**로 이동합니다.
-2. **Refresh custom pets**를 누릅니다.
-3. 목록에서 **마오마오 (Maomao)** 항목을 선택합니다.
-4. 펫이 보이지 않으면 채팅 입력창에서 `/pet`을 실행합니다.
-
-### ZIP으로 수동 설치
+#### ZIP으로 수동 설치
 
 1. GitHub의 **Code → Download ZIP**으로 저장소를 내려받아 압축을 풉니다.
 2. `pet.json`과 `spritesheet.webp`를 아래 폴더에 함께 복사합니다.
@@ -41,9 +38,49 @@ powershell -ExecutionPolicy Bypass -File .\install.ps1
 └── spritesheet.webp
 ```
 
-3. Codex에서 **Refresh custom pets**를 누릅니다. 그래도 나타나지 않으면 Codex를 완전히 종료한 뒤 다시 실행합니다.
+### macOS
+
+> 아래 설치 절차는 Codex Pets 로컬 패키지 규격을 기준으로 작성했으며 macOS 실기기에서는 아직 테스트하지 않았습니다.
+
+#### Terminal로 빠르게 설치
+
+```sh
+git clone https://github.com/h4vrut4/Maomao-Codex-Pet.git
+cd Maomao-Codex-Pet
+
+pet_dir="${CODEX_HOME:-$HOME/.codex}/pets/maomao-kusuriya"
+mkdir -p "$pet_dir"
+cp -f ./pet.json ./spritesheet.webp "$pet_dir/"
+```
+
+`sudo`는 필요하지 않습니다. `CODEX_HOME`을 따로 설정하지 않았다면 기본 설치 위치는 `~/.codex/pets/maomao-kusuriya`입니다.
+
+#### Finder로 수동 설치
+
+1. GitHub의 **Code → Download ZIP**으로 저장소를 내려받아 압축을 풉니다.
+2. Finder에서 `Shift+Command+G`를 누르고 `~/.codex/pets`를 입력합니다.
+3. `maomao-kusuriya` 폴더를 만든 뒤 `pet.json`과 `spritesheet.webp`를 함께 복사합니다.
+
+```text
+~/.codex/pets/maomao-kusuriya/
+├── pet.json
+└── spritesheet.webp
+```
+
+`CODEX_HOME`을 별도로 설정했다면 `~/.codex` 대신 해당 경로를 사용해야 합니다. Finder의 경로 입력창에서는 `$CODEX_HOME` 문자열이 자동으로 변환되지 않습니다.
+
+### Codex에서 불러오기
+
+1. **Settings → Pets**로 이동합니다.
+2. **Refresh custom pets** 또는 **Refresh**를 누릅니다.
+3. 목록에서 **마오마오 (Maomao)** 항목을 선택합니다.
+4. 채팅 입력창에서 `/pet`을 실행해 펫을 깨웁니다.
+
+맞춤형 펫은 각 컴퓨터에 로컬로 저장되며 ChatGPT 웹이나 다른 컴퓨터로 자동 동기화되지 않습니다.
 
 ## 업데이트
+
+### Windows
 
 저장소 폴더에서 아래 명령을 다시 실행하면 설치된 파일을 최신 버전으로 덮어씁니다.
 
@@ -52,17 +89,21 @@ git pull
 powershell -ExecutionPolicy Bypass -File .\install.ps1
 ```
 
-## 제작
+### macOS
 
-Built with OpenAI Codex and image generation. 캐릭터 스프라이트 제작부터 애니메이션 조립, 반복 개선, Codex Pets v2 검증까지 Codex를 활용했습니다.
+저장소 폴더에서 아래 명령을 실행합니다.
 
-이 저장소에는 커스텀 펫 자산과 설치 도우미만 포함되어 있으며, Codex Desktop 실행 파일이나 수정본은 포함하지 않습니다.
+```sh
+git pull --ff-only
 
-## 권리 안내
+pet_dir="${CODEX_HOME:-$HOME/.codex}/pets/maomao-kusuriya"
+mkdir -p "$pet_dir"
+cp -f ./pet.json ./spritesheet.webp "$pet_dir/"
+```
 
-이 저장소는 비공식·비상업적 팬 프로젝트이며 원작자, 출판사, 애니메이션 제작위원회 또는 OpenAI와 제휴하거나 승인을 받은 프로젝트가 아닙니다. 마오마오와 《약사의 혼잣말》에 관한 권리는 각 권리자에게 있습니다. 개인적인 용도로만 사용해 주세요.
+## 문제 해결
 
-## 문제 해결: Windows 배율 때문에 클릭·드래그가 안 될 때
+### Windows: 배율 때문에 클릭·드래그가 안 될 때
 
 마오마오는 Windows 디스플레이 배율 200%에서 테스트했습니다. 다른 배율이나 서로 다른 배율을 사용하는 다중 모니터 환경에서는 펫이 보이는 위치와 실제 클릭 영역이 어긋날 수 있습니다. 특히 150% 배율에서 펫은 보이지만 클릭과 드래그가 아래 창으로 통과하는 [Codex Desktop 알려진 문제](https://github.com/openai/codex/issues/42289)가 보고되어 있습니다.
 
@@ -82,4 +123,21 @@ Built with OpenAI Codex and image generation. 캐릭터 스프라이트 제작�
 
 Windows의 **높은 DPI 조정 동작 재정의**, 레지스트리 수정, 앱 파일 패치는 공식 해결책이 아니며 이 저장소에서는 권장하지 않습니다. 이전에 사용한 대각선 드래그 테스트 패치도 클릭 영역을 수정하는 패치가 아니므로 다른 PC의 배율 문제에는 적용할 수 없습니다.
 
-펫 선택·숨기기·깨우기 방법은 [OpenAI Pets 문서](https://learn.chatgpt.com/docs/pets)를 참고하세요.
+### macOS: 목록에 없거나 움직이지 않을 때
+
+1. `pet.json`과 `spritesheet.webp`가 중첩된 폴더 없이 `maomao-kusuriya` 바로 아래에 있는지 확인합니다.
+2. **Settings → Pets → Refresh custom pets**를 누르고 마오마오를 다시 선택합니다.
+3. 계속 나타나지 않으면 진행 중인 작업을 마친 뒤 `Command+Q`로 앱을 완전히 종료하고 다시 실행합니다.
+4. 펫이 정지 화면으로만 보이면 **시스템 설정 → 손쉬운 사용 → 디스플레이 → 동작 줄이기**를 확인합니다. 이 옵션이 켜져 있으면 펫은 스프라이트 애니메이션 대신 정지 프레임을 사용합니다.
+
+펫 선택·숨기기·깨우기 방법은 [OpenAI Pets 문서](https://learn.chatgpt.com/ko-KR/docs/pets)를 참고하세요.
+
+## 제작
+
+Built with OpenAI Codex and image generation. 캐릭터 스프라이트 제작부터 애니메이션 조립, 반복 개선, Codex Pets v2 검증까지 Codex를 활용했습니다.
+
+이 저장소에는 커스텀 펫 자산과 설치 도우미만 포함되어 있으며, Codex Desktop 실행 파일이나 수정본은 포함하지 않습니다.
+
+## 권리 안내
+
+이 저장소는 비공식·비상업적 팬 프로젝트이며 원작자, 출판사, 애니메이션 제작위원회 또는 OpenAI와 제휴하거나 승인을 받은 프로젝트가 아닙니다. 마오마오와 《약사의 혼잣말》에 관한 권리는 각 권리자에게 있습니다. 개인적인 용도로만 사용해 주세요.
