@@ -4,12 +4,6 @@
 
 > A cute animated Maomao custom pet for Codex Desktop on Windows.
 
-<p align="center">
-  <img src="preview/idle.gif" width="192" alt="Maomao idle animation">
-  <img src="preview/running.gif" width="192" alt="Maomao working animation">
-  <img src="preview/jumping.gif" width="192" alt="Maomao jumping animation">
-</p>
-
 ## 특징
 
 - Codex Pets v2 형식 (`spriteVersionNumber: 2`)
@@ -57,15 +51,6 @@ powershell -ExecutionPolicy Bypass -File .\install.ps1
 git pull
 powershell -ExecutionPolicy Bypass -File .\install.ps1
 ```
-
-## 미리보기
-
-<details>
-<summary>전체 애니메이션 시트 보기</summary>
-
-![Maomao animation contact sheet](preview/contact-sheet.png)
-
-</details>
 
 ## 제작
 
